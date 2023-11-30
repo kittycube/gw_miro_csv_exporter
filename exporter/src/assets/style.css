@@ -1,0 +1,25 @@
+@import 'mirotone/dist/styles.css';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+#root {
+  overflow: auto;
+  padding: var(--space-medium);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid {
+    padding:25px;
+}

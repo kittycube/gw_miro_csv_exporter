@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/assets/style.css" />
+    <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
+
+
+
+    <title>Exporter</title>
+</head>
+<body>
+
+    <div class="grid" id="grid">
+        <div class="cs1 ce12" id="rosette">
+            <div class="miro-draggable"><p>Rosette</p></div>
+            <label for="relation-select"> Choice:</label>
+            <select name="relations" id="relation-select">
+                <option value="">none</option>
+                <option value="platonic">platonic</option>
+                <option value="romantic">romantic</option>
+                <option value="rival">rival</option>
+            </select>
+            <input id="relation-value" type="number" value="0" />
+            <button id="choice-confirm" style="display:none" onclick="confirmRelationChange()"><img src="/src/assets/confirm.png" width="10" height="10" /></button>
+
+
+        </div>
+
+        <div class="cs1 ce12">
+            <div id="npc1" class="miro-draggable "><p id="npc1p"></p></div>
+            <button id="npc1b" class="npc1" onclick="editNPCName(this.className)" type="button"><img id="npc1i" src="/src/assets/edit.png" width="10" height="10" /></button>
+
+        </div>
+
+        <div class="cs1 ce12">
+            <div id="npc2" class="miro-draggable"><p id="npc2p"></p></div>
+            <button id="npc2b" class="npc2" onclick="editNPCName(this.className)" type="button"><img id="npc2i" src="/src/assets/edit.png" width="10" height="10" /></button>
+
+        </div>
+        <div>
+            <label for="emotion-select"> Emotion:</label>
+            <select name="emotions" id="emotion-select">
+                <option value="">none</option>
+                <option value="happy">happy</option>
+                <option value="sad">sad</option>
+                <option value="angry">angry</option>
+            </select>
+            <button id="emotion-confirm" style="display:none" onclick="confirmEmotionChange()"><img src="/src/assets/confirm.png" width="10" height="10" /></button>
+
+        </div>
+<!--
+        <div class="cs1 ce12">
+            <div id="convo-card" class="miro-draggable"><p>Convo Card</p></div>
+        </div>
+-->
+
+        <div id="tags" class="cs1 ce12">
+            <div>
+            <div class="miro-draggable"><p>Conversation Info</p></div>
+            <button id="info-confirm" style="display:none" onclick="addInfo()"><img src="/src/assets/confirm.png" width="10" height="10" /></button>
+            </div>
+            
+            <input type="text" id="title" placeholder="Conversation Name"/>
+
+            <input type="range" min="1" max="3" value="3" class="slider" id="convo-weight">
+
+            <!--<h2>Tags</h2>-->
+
+            <p>relation:</p>
+            <select name="relations" id="relations-select" onchange="relationChanges(this)">
+                <option value="" selected>none</option>
+                <option value="relation:platonic">platonic</option>
+                <option value="relation:rival">rival</option>
+                <option value="relation:romantic">romantic</option>
+
+            </select>
+
+            <p>location:</p>
+            <select name="locations" id="location-select" onchange="locationChanges(this)">
+                <option value="" selected>none</option>
+                <option value="location:forest">Forest</option>
+                <option value="location:home">Home</option>
+                <option value="location:townhall">TownHall</option>
+                <option value="location:workshop">Workshop</option>
+                <option value="location:auntshouse">AuntsHouse</option>
+
+            </select>
+
+
+
+
+            <!-- quests
+    <p>quests:</p>
+    <div id="quest-tags" onchange="questChanges(this)">
+
+    </div>
+
+    <button id="add-tag" onclick="addTag()"><img src="/src/assets/add.png" width="10" height="10" /></button>
+
+    <button id="delete-tag" onclick="removeTag(this)" style="display:none"><img src="/src/assets/delete.png" width="10" height="10" /></button>
+    -->
+        </div>
+<!-- quest triggers
+        <div id="triggers" class="cs1 ce12">
+            <p>quest triggers:</p>
+            <div id="quest-triggers" onchange="triggerChanges(this)">
+
+            </div>
+
+            <button id="add-trigger" onclick="addTrigger()"><img src="/src/assets/add.png" width="10" height="10" /></button>
+            <button id="delete-trigger" onclick="removeTrigger(this)" style="display:none"><img src="/src/assets/delete.png" width="10" height="10" /></button>
+
+
+
+        </div>
+-->
+
+
+        <div class="cs1 ce12" id="download">
+            <button onclick="generateCSV()" type="button">Download</button>
+        </div>
+    </div>
+
+    
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html>
+<script type="text/javascript" src="/src/index.js"></script>
